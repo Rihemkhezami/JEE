@@ -5,7 +5,6 @@ import { Container, Services, Body } from "./Profil";
 import store from "../redux/store";
 import NavbarHome from "../components/NavbarHome";
 import Service from "../components/Service";
-import Footer from "../components/Footer";
 import ServiceNotFound from "../components/ServiceNotFound";
 
 const Home = () => {

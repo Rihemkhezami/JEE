@@ -75,7 +75,7 @@ export const Container = styled.div`
 `;
 
 export const Services = styled.div`
-  min-height: 250px;
+  min-height: 200px;
   position: relative;
   user-select: none;
   display: grid;

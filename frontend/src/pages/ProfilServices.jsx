@@ -70,22 +70,22 @@ const ProfilServices = () => {
               <div key={e.id}>
                 <Service key={e.id} service={e} />
                 <div className="edit-del">
-                  <button>
+                  <button style={{backgroundColor:"#fff"}}>
                     <Link
-                      style={{ textDecoration: "none", color: "#2AAA8A" }}
+                      style={{ textDecoration: "none", color: "#0077ff",fontSize: "20px" }}
                       to={`/add-edit-service/${e.id}`}
                     >
                       Modifier
                     </Link>
                   </button>
-                  <button onClick={() => deleteClick(e.id)}>Supprimer</button>
+                  <button style={{fontSize:"20px",backgroundColor:"#fff"}} onClick={() => deleteClick(e.id)}>Supprimer</button>
                 </div>
               </div>
             ))
           )}
         </Services>
       </Container>
-      <Footer />
+
     </Body>
   );
 };

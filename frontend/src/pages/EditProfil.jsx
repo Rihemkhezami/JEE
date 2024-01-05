@@ -6,7 +6,6 @@ import { Container, Body } from "./Profil";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 const EditProfil = () => {
   //****Navigate****/
@@ -315,7 +314,7 @@ const EditProfil = () => {
           </div>
         </Form>
       </Container>
-      <Footer />
+
     </Body>
   );
 };

@@ -56,17 +56,25 @@ const ServicesTableAdmin = ({ services, viewAllClick }) => {
                   className="button del"
                   onClick={() => deleteService(e.id)}
                 >
-                  Supprimer
+                  <i
+                      className="uil uil-trash"
+                      title="Supprimer"
+                  ></i>
                 </div>
                 {e.nbServices !== 0 && (
-                  <div className="button view">
-                    <div
-                      className="link"
-                      onClick={() => navigate(`/view-service/${e.id}`)}
-                    >
-                      Voir service
+                    <div className="button view">
+
+                      <div
+                          className="link"
+                          onClick={() => navigate(`/view-service/${e.id}`)}
+                      >
+                        <i
+                            className="uil uil-eye"
+                            title="voir"
+
+                        ></i>
+                      </div>
                     </div>
-                  </div>
                 )}
               </td>
             </tr>
@@ -80,7 +88,8 @@ const ServicesTableAdmin = ({ services, viewAllClick }) => {
 export const Table = styled.table`
   position: relative;
   user-select: none;
-  padding: 0 10px;
+  padding:0 10px;
+  width: 420px;
   margin: 100px auto 0;
   background-color: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -101,7 +110,7 @@ export const Table = styled.table`
     color: #fff;
     border-radius: 0 5px 0 5px;
     height: 30px;
-    width: 80px;
+    width: 100px;
     cursor: pointer;
   }
   thead tr:nth-child(2) {
@@ -110,14 +119,14 @@ export const Table = styled.table`
   .no-result td {
     position: absolute;
     left: 0;
-    width: 100%;
+    width: 80%; 
     color: #ff2400;
   }
   .not-valid td {
     color: #3cb371;
   }
   tbody tr.color-not-valid td {
-    color: #088f8f;
+    color: #ff2400;
   }
   tbody tr:not(:last-child)::after,
   thead tr:last-child::after {
@@ -156,7 +165,7 @@ export const Table = styled.table`
     text-align: center;
   }
   .color-not-valid {
-    color: #088f8f;
+    color: #ff2400;
   }
   tbody td:last-child {
     display: flex;
@@ -171,10 +180,13 @@ export const Table = styled.table`
       border-radius: 7px;
       color: #fff;
       &.view {
-        background-color: #088f8f;
+        background-color: #004AAD;
+        font-size: large;
+        
       }
       &.del {
         background-color: #ff2400;
+        font-size: large;
       }
       .link {
         text-decoration: none;

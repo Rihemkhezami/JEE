@@ -78,24 +78,25 @@ const Stat = styled.div`
   margin: 60px 0 0 100px;
   display: flex;
   gap: 70px;
-  .users{
-    height: 110px;
-    width: 150px;
-    background-color: #F0F8FF;
-    text-align: center;
-  i{
-    color: #fff1c2;
-  }
+  padding-left: 190px;
+  
+  
   }
   .stat {
     display: flex;
     align-items: center;
+    text-align: center;
     gap: 15px;
+    height: 110px;
+    width: 160px;
+    background-color: #F0F8FF;
+    border-radius: 20px;
     
     div {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-left: 13px;
       
       h2 {
         color: #0077ff;

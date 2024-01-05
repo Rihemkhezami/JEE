@@ -209,7 +209,7 @@ const Categories = styled.div`
       }
     }
     div:before {
-      content: "";
+    //  content: "";
       position: absolute;
       left: 0;
       top: 0;

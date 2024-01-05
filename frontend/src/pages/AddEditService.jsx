@@ -6,7 +6,6 @@ import { data } from "../data/Data";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { DropDown } from "../components/FilterServices";
 
 const EditService = () => {
@@ -403,7 +402,7 @@ const EditService = () => {
           </button>
         </Form>
       </Container>
-      <Footer />
+
     </Body>
   );
 };

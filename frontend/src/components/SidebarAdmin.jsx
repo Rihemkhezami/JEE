@@ -75,7 +75,7 @@ export const Sidebar = styled.div`
   border-radius: 20px;
   left: 10px;
   top: 90px;
-  height: 80vh;
+  height: 70vh;
   width: 250px;
   background-color:#FFFFFF;
   .image-text {

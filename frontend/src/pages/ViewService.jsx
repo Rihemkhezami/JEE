@@ -343,14 +343,17 @@ export const Popup = styled.div`
 
 export const Service = styled.div`
   z-index: 100;
-  margin-top: 80px;
+  margin-top: 100px;
+  
+ // margin-left: 400px;
   height: calc(100vh - 90px);
+  //height: 400px;
   position: relative;
   .valid-button {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #3cb371;
+    bottom: 70px;
+    left: 600px;
+    background-color:#0077ff;
     border: none;
     outline: none;
     padding: 7px 20px;
@@ -360,18 +363,20 @@ export const Service = styled.div`
     border-radius: 5px;
   }
   .blue {
-    width: 70%;
-    height: 85%;
+    width: 50%;
+    height: 75%;
     padding-top: 130px;
-    background-color: #0077ff;
+    background-color:#FFFFFF;
     display: flex;
     position: relative;
-    border-radius: 0 0px 10px 0;
+    border-radius: 20px;
+    margin-left: 300px;
+    
   }
   .blue .text {
     padding-left: 100px;
     width: 600px;
-    color: white;
+    color: #5C5C5C;
   }
   .blue .text h4 {
     font-size: 35px;
