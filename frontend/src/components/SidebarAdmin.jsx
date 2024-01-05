@@ -33,9 +33,8 @@ const SidebarAdmin = () => {
   return (
     <Sidebar>
       <div ref={sidebarRef} className="sidebar">
-        <div className="image-text">
-          <img className="image" src="/images/Favicon.png" alt="" />
-          <div className="text">Small City</div>
+        <div style={{paddingLeft:"20px",paddingTop:"7px"}} className="image-ext">
+          <img style={{}} src="/images/logo.png"  width={200} alt="logo"/>
         </div>
 
         <div className="menu">
@@ -75,7 +74,7 @@ export const Sidebar = styled.div`
   border-radius: 20px;
   left: 10px;
   top: 90px;
-  height: 70vh;
+  height: 75vh;
   width: 250px;
   background-color:#FFFFFF;
   .image-text {
@@ -98,17 +97,18 @@ export const Sidebar = styled.div`
   .menu {
     display: flex;
     flex-direction: column;
-    margin-top: 70px;
+    margin-top: 50px;
     .link {
       text-decoration: none;
      // color: #fff;
       color:#5C5C5C ;
       padding: 15px 0 15px 20px;
       &.active {
-        background-color: #D9F4FF;
+        background-color:  #F0F8FF;
       }
       &:hover {
-        background-color: #D9F4FF;
+       // background-color: #D9F4FF;
+        background-color:   #F0F8FF;
       }
       i {
         margin-right: 10px;
@@ -121,11 +121,11 @@ export const Sidebar = styled.div`
   }
   .log-out {
     display: flex;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
     gap: 10px;
     position: absolute;
-    bottom: 50px;
+    bottom: 30px;
     border: 1px solid #fff;
     width: 180px;
     padding: 5px 10px;

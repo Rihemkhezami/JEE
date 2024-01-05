@@ -50,7 +50,7 @@ const Navbar = (props) => {
   return (
     <NavbarDiv>
       <Link to="/profil">
-        <img src="/images/logo.png" alt="logo" />
+        <img style={{marginLeft:"73px"}} src="/images/logo.png" alt="logo" />
       </Link>
       <form>
         <div className="search">
@@ -112,13 +112,17 @@ const Navbar = (props) => {
 //****styled componnents ****
 export const NavbarDiv = styled.nav`
   position: fixed;
-  width: 100%;
-  top: 0;
+  width: 1200px;
+  top: 5px;
+  border-radius: 15px;
+  left:220px ;
+ // width: 100%;
+  //top: 0;
   background-color: #fdfdf9;
  // background-color: #FFDDCA;
   z-index: 1000;
   user-select: none;
-  height: 60px;
+  height: 85px;
   padding: 5px 15px 5px 10px;
   display: flex;
   justify-content: space-between;
@@ -142,6 +146,7 @@ export const NavbarDiv = styled.nav`
     }
     img {
       height: 100%;
+      width: 100px;
     }
   }
   form {

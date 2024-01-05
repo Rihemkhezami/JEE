@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import {jwtDecode} from 'jwt-decode';
 import axios from "axios";
 
 const Login = ({ clickHandler }) => {
@@ -72,14 +73,21 @@ const Login = ({ clickHandler }) => {
           toast.warning("Email invalide");
         } else {
           const response = await axios.post(
-            "http://localhost:8090/login",
-            state
+              "http://localhost:8090/login2",
+              state
           );
           if (typeof response.data === "string") {
             toast.error(response.data);
             setState({ ...state, password: "" });
           } else {
-            const { password, createdAt, updatedAt, ...other } = response.data;
+            let token = jwtDecode(response.data.token);
+            console.log("token",token);
+            if(token.isAdmin==="true"){
+              token.isAdmin=true;
+            }else{
+              token.isAdmin=false;
+            }
+            const { password, createdAt, updatedAt, ...other } = token;
             localStorage.setItem("userInfo", JSON.stringify(other));
             if (other.isAdmin) navigate("/admin-users");
             else {
@@ -95,63 +103,62 @@ const Login = ({ clickHandler }) => {
   };
   //****Render****
   return (
-    <Container>
-      <Link to="/">
-        <i
-          title="Revenir à la page d'accueil"
-          className="uil uil-left-arrow-from-left"
-        ></i>
-      </Link>
-      <Title>se connecter</Title>
-      <Form>
-        <InputField>
-          <input
-            onFocus={focusHandler}
-            onBlur={blurHandler}
-            type="email"
-            placeholder="Email"
-            required
-            autoComplete="false"
-            name="email"
-            value={state.email}
-            onChange={changeHundler}
-          />
-          <i ref={iconRef1} className="uil uil-envelope"></i>
-          <span ref={lineRef1} className="line-hover"></span>
-        </InputField>
-        <InputField>
-          <input
-            onFocus={focusHandler}
-            onBlur={blurHandler}
-            ref={pswRef}
-            type="password"
-            placeholder="Mot de passe"
-            required
-            value={state.password}
-            name="password"
-            onChange={changeHundler}
-          />
-          <i ref={iconRef2} className="uil uil-lock"></i>
-          <i onClick={eyeClick} className="eye uil uil-eye"></i>
-          <span ref={lineRef2} className="line-hover"></span>
-        </InputField>
-        <div className="forgot">
-          <a href="#">
-            MOT DE PASSE OUBLIÉ ?
-          </a>
-        </div>
-        <Button type="submit" onClick={connectionClick}>
-          Se connecter
-        </Button>
-        <div className="signup">
-          Vous n'êtes pas inscrit?{" "}
-          <a onClick={() => clickHandler(-50)}>Créer un compte</a>
-        </div>
-      </Form>
-    </Container>
+      <Container>
+        <Link to="/">
+          <i
+              title="Revenir à la page d'accueil"
+              className="uil uil-left-arrow-from-left"
+          ></i>
+        </Link>
+        <Title>se connecter</Title>
+        <Form>
+          <InputField>
+            <input
+                onFocus={focusHandler}
+                onBlur={blurHandler}
+                type="email"
+                placeholder="Email"
+                required
+                autoComplete="false"
+                name="email"
+                value={state.email}
+                onChange={changeHundler}
+            />
+            <i ref={iconRef1} className="uil uil-envelope"></i>
+            <span ref={lineRef1} className="line-hover"></span>
+          </InputField>
+          <InputField>
+            <input
+                onFocus={focusHandler}
+                onBlur={blurHandler}
+                ref={pswRef}
+                type="password"
+                placeholder="Mot de passe"
+                required
+                value={state.password}
+                name="password"
+                onChange={changeHundler}
+            />
+            <i ref={iconRef2} className="uil uil-lock"></i>
+            <i onClick={eyeClick} className="eye uil uil-eye"></i>
+            <span ref={lineRef2} className="line-hover"></span>
+          </InputField>
+          <div className="forgot">
+            <a href="#">
+              MOT DE PASSE OUBLIÉ ?
+            </a>
+          </div>
+          <Button type="submit" onClick={connectionClick}>
+            Se connecter
+          </Button>
+          <div className="signup">
+            Vous n'êtes pas inscrit?{" "}
+            <a onClick={() => clickHandler(-50)}>Créer un compte</a>
+          </div>
+        </Form>
+      </Container>
   );
 };
-
 //****Styled Components****
 export const Container = styled.div`
   transition: margin-left 0.18s ease;

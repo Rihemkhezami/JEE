@@ -80,8 +80,12 @@ export const Navbar = styled.div`
   justify-content: end;
   position: relative;
  // background-color: #084e64;
-  background-color: #fdfdf9;
-  height: 60px;
+  background-color:#FFFFFF;
+  height: 70px;
+  width: 1100px;
+  top: 5px;
+  border-radius: 15px;
+  left:285px ;
   &:after {
    // content: "";
     position: absolute;
@@ -95,12 +99,16 @@ export const Navbar = styled.div`
   .search {
     content: "";
     position: absolute;
+    
     left: 50%;
+    border: 2px solid grey;
+   border-radius: 5px;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
+    width: 450px;
     display: flex;
     input {
+     // background-color: #F0F8FF;
       width: 100%;
       height: 30px;
       padding-left: 40px;
@@ -109,7 +117,7 @@ export const Navbar = styled.div`
     }
     i {
       position: absolute;
-      left: 50%;
+      left: 55%;
       top: 50%;
       transform: translate(calc(-50% - 230px), -50%);
       color: #084e64;

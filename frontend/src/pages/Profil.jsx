@@ -5,7 +5,7 @@ import FilterServices from "../components/FilterServices";
 import store from "../redux/store";
 import Navbar from "../components/Navbar";
 import Service from "../components/Service";
-import Footer from "../components/Footer";
+//import Footer from "../components/Footer";
 import ServiceNotFound from "../components/ServiceNotFound";
 
 const Home = () => {
@@ -59,7 +59,7 @@ const Home = () => {
           )}
         </Services>
       </Container>
-      <Footer />
+
     </Body>
   );
 };

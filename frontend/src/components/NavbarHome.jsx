@@ -33,7 +33,7 @@ const NavbarHome = (props) => {
   return (
     <Navbar>
       <Link to="/">
-        <img src="/images/logo.png" alt="logo" />
+        <img style={{marginLeft:"73px"}} src="/images/logo.png" alt="logo" />
       </Link>
       <form onSubmit={searchGlobalClick}>
         <div className="search">
@@ -59,13 +59,18 @@ const NavbarHome = (props) => {
 
 export const Navbar = styled.nav`
   position: fixed;
-  width: 100%;
-  top: 0;
+  //width: 100%;
+//  top: 0;
+  width: 1100px;
+  top: 5px;
+  border-radius: 15px;
+  left:285px ;
+  
   //background-color: #f1f1f1;
   background-color: #fdfdf9;
   z-index: 1000;
   user-select: none;
-  height: 60px;
+  height: 85px;
   padding: 5px 15px 5px 10px;
   display: flex;
   justify-content: space-between;
@@ -89,6 +94,7 @@ export const Navbar = styled.nav`
     }
     img {
       height: 100%;
+      width: 100px;
     }
   }
 
